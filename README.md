@@ -1,3 +1,3 @@
 # admin_page
 fastcampus Toy Project
-어드민 페이지 
+어드민 페이지 만들기
