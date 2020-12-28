@@ -10,29 +10,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor // 기본 생성자
-@Entity // ==table
-public class User {
+@Data
+@Entity
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
+    private String type;
 
-    private String password;
-
-    private String status;
-
-    private String email;
-
-    private String phoneNumber;
-
-    private LocalDateTime registeredAt;
-
-    private LocalDateTime unregisteredAt;
+    private String title;
 
     private LocalDateTime createdAt;
 
@@ -41,4 +31,5 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
 }

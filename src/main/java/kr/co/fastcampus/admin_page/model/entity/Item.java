@@ -12,23 +12,25 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor // 기본 생성자
-@Entity // ==table
-public class User {
+@NoArgsConstructor
+@Entity
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
-
-    private String password;
-
     private String status;
 
-    private String email;
+    private String name;
 
-    private String phoneNumber;
+    private String title;
+
+    private String content;
+
+    private Integer price;
+
+    private String brandName;
 
     private LocalDateTime registeredAt;
 
@@ -41,4 +43,5 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
 }

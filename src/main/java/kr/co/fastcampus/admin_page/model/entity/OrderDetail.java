@@ -8,31 +8,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity // order_detail
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor // 기본 생성자
-@Entity // ==table
-public class User {
+public class OrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
-
-    private String password;
-
     private String status;
 
-    private String email;
+    private LocalDateTime arrivalDate;
 
-    private String phoneNumber;
+    private Integer quantity;
 
-    private LocalDateTime registeredAt;
-
-    private LocalDateTime unregisteredAt;
+    private BigDecimal totalPrice;
 
     private LocalDateTime createdAt;
 
@@ -41,4 +36,5 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
 }

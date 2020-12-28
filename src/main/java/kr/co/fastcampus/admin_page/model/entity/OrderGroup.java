@@ -1,5 +1,6 @@
 package kr.co.fastcampus.admin_page.model.entity;
 
+import jdk.vm.ci.meta.Local;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,31 +9,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor // 기본 생성자
-@Entity // ==table
-public class User {
+@Data
+@Entity
+public class OrderGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String account;
-
-    private String password;
-
     private String status;
 
-    private String email;
+    private String orderType;   // 주문의 형태 - 일괄 / 개별
 
-    private String phoneNumber;
+    private String revAddress;
 
-    private LocalDateTime registeredAt;
+    private String revName;
 
-    private LocalDateTime unregisteredAt;
+    private String paymentType;
+
+    private BigDecimal totalPrice;
+
+    private Integer totalQuantity;
+
+    private LocalDateTime orderAt;
+
+    private LocalDateTime arrivalDate;
 
     private LocalDateTime createdAt;
 
@@ -41,4 +47,5 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
 }
