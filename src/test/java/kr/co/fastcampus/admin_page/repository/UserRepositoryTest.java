@@ -2,6 +2,7 @@ package kr.co.fastcampus.admin_page.repository;
 
 import kr.co.fastcampus.admin_page.AdminPageApplicationTests;
 import kr.co.fastcampus.admin_page.model.entity.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,26 +18,37 @@ public class UserRepositoryTest extends AdminPageApplicationTests {
 
     @Test
     public void create(){
+
+        String account = "Test01";
+        String password = "Test01";
+        String status = "REGISTERED";
+        String email = "Test01@gmail.com";
+        String phoneNumber = "010-1111-2222";
+        LocalDateTime registeredAt = LocalDateTime.now();
+        LocalDateTime createdAt = LocalDateTime.now();
+        String createdBy = "AdminServer";
+
         // String sql = insert into user (%s, %s, %d) value (account, email, age);
         User user = new User();
-        user.setAccount("TestUser03");
-        user.setEmail("TestUser03@gmail.com");
-        user.setPhoneNumber("010-1111-3333");
-        user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("TestUser3");
+        user.setAccount(account);
+        user.setPassword(password);
+        user.setStatus(status);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setRegisteredAt(registeredAt);
+        user.setCreatedAt(createdAt);
+        user.setCreatedBy(createdBy);
 
         User newUser = userRepository.save(user);
-        System.out.println("newUser : "+newUser);
+
+        Assertions.assertNotNull(newUser);
     }
 
     @Test
     public void read(){
-        Optional<User> user = userRepository.findById(2L);  // id(long형)로 검색
 
-        user.ifPresent(selectUser -> {
-            System.out.println("user : "+selectUser);
-            System.out.println("email : "+selectUser.getEmail());
-        });
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");  // 폰 번호로 검색
+        Assertions.assertNotNull(user);
     }
 
     @Test
