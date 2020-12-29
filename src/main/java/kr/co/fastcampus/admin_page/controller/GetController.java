@@ -1,6 +1,7 @@
 package kr.co.fastcampus.admin_page.controller;
 
 import kr.co.fastcampus.admin_page.model.SearchParam;
+import kr.co.fastcampus.admin_page.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,5 +31,12 @@ public class GetController {
 
         // { "account" : "", "email" : "", "page" : 0}
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        // {"resultCode" : "OK" , "description" : "OK" }
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }
