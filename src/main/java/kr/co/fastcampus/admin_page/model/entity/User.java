@@ -1,5 +1,6 @@
 package kr.co.fastcampus.admin_page.model.entity;
 
+import kr.co.fastcampus.admin_page.model.enumclass.UserStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -30,7 +31,8 @@ public class User {
 
     private String password;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
     private String email;
 
