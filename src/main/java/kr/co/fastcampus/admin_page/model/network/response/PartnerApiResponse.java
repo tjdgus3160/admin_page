@@ -1,5 +1,6 @@
 package kr.co.fastcampus.admin_page.model.network.response;
 
+import kr.co.fastcampus.admin_page.model.enumclass.PartnerStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +18,7 @@ public class PartnerApiResponse {
 
     private String name;
 
-    private String status;
+    private PartnerStatus status;
 
     private String address;
 

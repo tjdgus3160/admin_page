@@ -1,5 +1,6 @@
 package kr.co.fastcampus.admin_page.model.entity;
 
+import kr.co.fastcampus.admin_page.model.enumclass.OrderDetailStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -26,7 +27,8 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private OrderDetailStatus status;
 
     private LocalDateTime arrivalDate;
 
