@@ -55,8 +55,8 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
         ItemApiRequest body = request.getData();
 
         return itemRepository.findById(body.getId())
-                .map(entityItem ->{
-                    entityItem
+                .map(item ->{
+                    item
                             .setStatus(body.getStatus())
                             .setName(body.getName())
                             .setTitle(body.getTitle())
@@ -66,9 +66,9 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                             .setRegisteredAt(body.getRegisteredAt())
                             .setUnregisteredAt(body.getUnregisteredAt())
                             ;
-                    return entityItem;
+                    return item;
                 })
-                .map(newEntityItem -> itemRepository.save(newEntityItem))
+                .map(item -> itemRepository.save(item))
                 .map(item -> response(item))
                 .orElseGet(()->Header.ERROR("데이터 없음"));
     }
