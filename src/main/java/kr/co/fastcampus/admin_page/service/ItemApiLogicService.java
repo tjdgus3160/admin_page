@@ -6,9 +6,11 @@ import kr.co.fastcampus.admin_page.model.network.request.ItemApiRequest;
 import kr.co.fastcampus.admin_page.model.network.response.ItemApiResponse;
 import kr.co.fastcampus.admin_page.repository.PartnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class ItemApiLogicService extends BaseService<ItemApiRequest, ItemApiResponse, Item> {
@@ -80,7 +82,7 @@ public class ItemApiLogicService extends BaseService<ItemApiRequest, ItemApiResp
                 .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
-    private Header<ItemApiResponse> response(Item item){
+    public Header<ItemApiResponse> response(Item item){
 
         // 상태 다른 형태로 나타내기
         //String statusTitle = item.getStatus().getTitle();
@@ -99,5 +101,10 @@ public class ItemApiLogicService extends BaseService<ItemApiRequest, ItemApiResp
                 .build();
 
         return Header.OK(body);
+    }
+
+    @Override
+    public Header<List<ItemApiResponse>> search(Pageable pageable) {
+        return null;
     }
 }

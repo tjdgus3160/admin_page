@@ -4,7 +4,10 @@ import kr.co.fastcampus.admin_page.model.entity.AdminUser;
 import kr.co.fastcampus.admin_page.model.network.Header;
 import kr.co.fastcampus.admin_page.model.network.request.AdminUserApiRequest;
 import kr.co.fastcampus.admin_page.model.network.response.AdminUserApiResponse;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, AdminUserApiResponse,AdminUser> {
@@ -79,5 +82,10 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
                 .build();
 
         return Header.OK(body);
+    }
+
+    @Override
+    public Header<List<AdminUserApiResponse>> search(Pageable pageable) {
+        return null;
     }
 }

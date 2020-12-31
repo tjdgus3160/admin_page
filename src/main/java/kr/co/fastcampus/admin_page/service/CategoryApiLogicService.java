@@ -4,7 +4,10 @@ import kr.co.fastcampus.admin_page.model.entity.Category;
 import kr.co.fastcampus.admin_page.model.network.Header;
 import kr.co.fastcampus.admin_page.model.network.request.CategoryApiRequest;
 import kr.co.fastcampus.admin_page.model.network.response.CategoryApiResponse;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CategoryApiLogicService extends BaseService<CategoryApiRequest, CategoryApiResponse,Category> {
@@ -68,5 +71,10 @@ public class CategoryApiLogicService extends BaseService<CategoryApiRequest, Cat
                 .title(category.getTitle())
                 .build();
         return Header.OK(body);
+    }
+
+    @Override
+    public Header<List<CategoryApiResponse>> search(Pageable pageable) {
+        return null;
     }
 }

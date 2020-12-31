@@ -7,9 +7,11 @@ import kr.co.fastcampus.admin_page.model.network.response.OrderDetailApiResponse
 import kr.co.fastcampus.admin_page.repository.ItemRepository;
 import kr.co.fastcampus.admin_page.repository.OrderGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class OrderDetailApiLogicService extends BaseService<OrderDetailApiRequest, OrderDetailApiResponse,OrderDetail> {
@@ -91,5 +93,10 @@ public class OrderDetailApiLogicService extends BaseService<OrderDetailApiReques
                 .build();
 
         return Header.OK(body);
+    }
+
+    @Override
+    public Header<List<OrderDetailApiResponse>> search(Pageable pageable) {
+        return null;
     }
 }

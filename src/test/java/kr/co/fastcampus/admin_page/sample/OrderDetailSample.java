@@ -48,9 +48,7 @@ public class OrderDetailSample extends AdminPageApplicationTests {
         for(int j = 0; j < 1; j++){
             User user = userList.get(j);
             item(user);
-
         }
-
 
         userList.forEach(user -> {
 
