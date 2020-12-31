@@ -3,6 +3,7 @@ package kr.co.fastcampus.admin_page.repository;
 import kr.co.fastcampus.admin_page.AdminPageApplicationTests;
 import kr.co.fastcampus.admin_page.model.entity.Partner;
 import kr.co.fastcampus.admin_page.model.entity.User;
+import kr.co.fastcampus.admin_page.model.enumclass.PartnerStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class PartnerRepositoryTest extends AdminPageApplicationTests {
 
         Partner partner = new Partner();
         partner.setName(name);
-        partner.setStatus(statue);
+        partner.setStatus(PartnerStatus.REGISTERED);
         partner.setAddress(address);
         partner.setCallCenter(callCenter);
         partner.setPartnerNumber(partnerNumber);

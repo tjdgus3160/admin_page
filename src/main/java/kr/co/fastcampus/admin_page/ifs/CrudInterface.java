@@ -1,4 +1,4 @@
-package kr.co.fastcampus.admin_page.controller.ifs;
+package kr.co.fastcampus.admin_page.ifs;
 
 import kr.co.fastcampus.admin_page.model.network.Header;
 import kr.co.fastcampus.admin_page.model.network.request.UserApiRequest;

@@ -2,6 +2,7 @@ package kr.co.fastcampus.admin_page.repository;
 
 import kr.co.fastcampus.admin_page.AdminPageApplicationTests;
 import kr.co.fastcampus.admin_page.model.entity.OrderDetail;
+import kr.co.fastcampus.admin_page.model.enumclass.OrderDetailStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class OrderDetailRepositoryTest extends AdminPageApplicationTests {
 
         OrderDetail orderDetail = new OrderDetail();
 
-        orderDetail.setStatus("WAITING");
+        orderDetail.setStatus(OrderDetailStatus.COMPLETE);
         orderDetail.setArrivalDate(LocalDateTime.now().plusDays(2));    // 현재로 부터 2일 후
         orderDetail.setQuantity(1);
         orderDetail.setTotalPrice(BigDecimal.valueOf(900000));

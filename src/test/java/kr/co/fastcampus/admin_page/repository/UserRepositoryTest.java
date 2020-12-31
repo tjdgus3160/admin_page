@@ -2,6 +2,7 @@ package kr.co.fastcampus.admin_page.repository;
 
 import kr.co.fastcampus.admin_page.AdminPageApplicationTests;
 import kr.co.fastcampus.admin_page.model.entity.User;
+import kr.co.fastcampus.admin_page.model.enumclass.UserStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class UserRepositoryTest extends AdminPageApplicationTests {
 
         String account = "Test03";
         String password = "Test03";
-        String status = "REGISTERED";
+        UserStatus status = UserStatus.REGISTERED;
         String email = "Test01@gmail.com";
         String phoneNumber = "010-1111-3333";
         LocalDateTime registeredAt = LocalDateTime.now();

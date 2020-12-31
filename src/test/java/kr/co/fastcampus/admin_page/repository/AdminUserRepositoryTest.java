@@ -2,6 +2,7 @@ package kr.co.fastcampus.admin_page.repository;
 
 import kr.co.fastcampus.admin_page.AdminPageApplicationTests;
 import kr.co.fastcampus.admin_page.model.entity.AdminUser;
+import kr.co.fastcampus.admin_page.model.enumclass.AdminUserStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class AdminUserRepositoryTest extends AdminPageApplicationTests {
         AdminUser adminUser = new AdminUser();
         adminUser.setAccount("AdminUser01");
         adminUser.setPassword("AdminUser01");
-        adminUser.setStatus("REGISTERED");
+        adminUser.setStatus(AdminUserStatus.REGISTERED);
         adminUser.setRole("PARTNER");
         //adminUser.setCreatedAt(LocalDateTime.now());
         //adminUser.setCreatedBy("AdminServer");
